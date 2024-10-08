@@ -1,0 +1,120 @@
+:root {
+  --black: #242424;
+  --white: #f9f9f9;
+  --orange: rgb(210, 60, 15);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--black);
+  background-color: var(--white);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+h1, h2, h3, h4, h5, h6, header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  object-fit: contain;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--orange);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  .header-bar {
+    color: var(--white);
+    background-color: var(--black);
+  }
+  .circle-card,
+  .custom-button {
+    color: var(--black);
+    background-color: var(--white);
+  }
+  .arrow-right {
+    border-left:20px solid var(--white); 
+  }
+  .arrow-left {
+    border-right:20px solid var(--white); 
+  }
+  .circle-card-letter {
+    color: var(--black);
+  }
+  .circle-card:hover {
+    box-shadow: 0px 3px 15px rgba(255, 255, 255, 0.5);
+  }
+  .side-nav-item:before {
+    background-color: #fff;
+  }
+  .button-tile {
+    box-shadow: var(--white) 6px 6px 6px;
+  }
+  .bubble {
+    background-color: var(--white);
+  }
+  button {
+    background-color: var(--white);
+  }
+}
