@@ -3,7 +3,6 @@ import './App.css'
 import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 import { PortfolioPage } from './pages/PortfolioPage';
-import { ResumePage } from './pages/ResumePage';
 
 export let title = 'jaycemeyer-website';
 export let date = new Date().getFullYear();
@@ -40,7 +39,6 @@ export default function App() {
           {content === "about" && <AboutPage setContent={handleClick}></AboutPage>}
           {content === "portfolio" && <PortfolioPage setContent={handleClick}></PortfolioPage>}
           {content === "contact" && <ContactPage></ContactPage>}
-          {content === "resume" && <ResumePage></ResumePage>}
         </div>
       </div>
       

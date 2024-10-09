@@ -5,9 +5,10 @@ import jokeImg from "../assets/images/Joke_Generator.png";
 import { CustomButton } from "../components/CustomButton";
 import { CustomCard } from "../components/CustomCard";
 
-export function PortfolioPage({setContent}: {setContent: any}) {
+export function PortfolioPage({}: {setContent: any}) {
     const handleClick = () => {
-        setContent("resume");
+        // setContent("resume");
+        window.open('src/assets/images/Jayce Meyer Resume (Aug 2024).jpg', '_blank');
     }
 
     return (
