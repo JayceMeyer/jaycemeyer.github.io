@@ -4,7 +4,7 @@ import { CustomButton } from "../components/CustomButton";
 export function AboutPage({}: {setContent: any}) {
     const handleClick = () => {
         // setContent("resume");
-        window.open('images/Jayce Meyer Resume (Aug 2024).jpg', '_blank');
+        window.open('images/Jayce Meyer Resume (Oct 2024).pdf', '_blank');
     }
 
     return (
