@@ -1,14 +1,14 @@
-import trailmapImg from "../images/Trail_Map.png";
-import candygalleryImg from "../images/Candy_Gallery.png";
-import duelcalcImg from "../images/Duel_Calculator.png";
-import jokeImg from "../images/Joke_Generator.png";
+import trailmapImg from "../../public/images/Trail_Map.png";
+import candygalleryImg from "../../public/images/Candy_Gallery.png";
+import duelcalcImg from "../../public/images/Duel_Calculator.png";
+import jokeImg from "../../public/images/Joke_Generator.png";
 import { CustomButton } from "../components/CustomButton";
 import { CustomCard } from "../components/CustomCard";
 
 export function PortfolioPage({}: {setContent: any}) {
     const handleClick = () => {
         // setContent("resume");
-        window.open('src/images/Jayce Meyer Resume (Aug 2024).jpg', '_blank');
+        window.open('public/images/Jayce Meyer Resume (Aug 2024).jpg', '_blank');
     }
 
     return (
