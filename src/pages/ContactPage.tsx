@@ -1,6 +1,6 @@
-import linkedinImg from "../assets/linkedin.png";
-import facebookImg from "../assets/facebook.png";
-import instagramImg from "../assets/instagram.png";
+import linkedinImg from "../images/linkedin.png";
+import facebookImg from "../images/facebook.png";
+import instagramImg from "../images/instagram.png";
 
 export function ContactPage() {
     return (
