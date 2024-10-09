@@ -1,10 +1,10 @@
-import headImg from "../assets/images/head-shot.jpg";
+import headImg from "../assets/head-shot.jpg";
 import { CustomButton } from "../components/CustomButton";
 
 export function AboutPage({}: {setContent: any}) {
     const handleClick = () => {
         // setContent("resume");
-        window.open('src/assets/images/Jayce Meyer Resume (Aug 2024).jpg', '_blank');
+        window.open('src/assets/Jayce Meyer Resume (Aug 2024).jpg', '_blank');
     }
 
     return (
