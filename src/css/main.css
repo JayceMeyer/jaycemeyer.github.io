@@ -1,0 +1,130 @@
+:root {
+  --black: #000;
+  --charcoal: #242424;
+  --darkgray: #7d7d7d;
+  --lightgray: #bdbdbd;
+  --white: #f9f9f9;
+  --orange: rgb(210, 60, 15);
+  --foreground-color: var(--charcoal);
+  --background-color: var(--white);
+  --accent-color: var(--orange);
+  --unselected-item-color: var(--lightgray);
+  --dark-mode-only-color: var(--background-color);
+
+  font-size: 62.5%;
+
+  font-family: "Josefin Sans";
+  line-height: 1.5;
+
+  display: flex;
+  place-items: center;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+
+  color-scheme: light dark;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+a {
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  font-family: "Josefin Sans";
+}
+
+h2 {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  font-family: "Josefin Sans";
+}
+
+h3 {
+  font-size: 2.4rem;
+  line-height: 1.1;
+  font-family: "Josefin Sans";
+}
+
+h4 {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-family: "Josefin Sans";
+}
+
+h5 {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  font-family: "Josefin Sans";
+}
+
+h6 {
+  font-size: 1.6rem;
+  line-height: 1.1;
+  font-family: "Josefin Sans";
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  font-family: "Roboto";
+}
+
+img {
+  object-fit: contain;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --foreground-color: var(--charcoal);
+    --background-color: var(--white);
+    --unselected-item-color: var(--lightgray);
+    --dark-mode-only-color: var(--background-color);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-color: var(--charcoal);
+    --background-color: var(--white);
+    --accent-color: var(--orange);
+    --unselected-item-color: var(--darkgray);
+    --dark-mode-only-color: var(--foreground-color);
+  }
+}
+
+:root.light {
+  --foreground-color: var(--charcoal);
+  --background-color: var(--white);
+  --unselected-item-color: var(--lightgray);
+  --dark-mode-only-color: var(--background-color);
+}
+
+:root.dark {
+  --foreground-color: var(--white);
+  --background-color: var(--charcoal);
+  --unselected-item-color: var(--darkgray);
+  --dark-mode-only-color: var(--foreground-color);
+}

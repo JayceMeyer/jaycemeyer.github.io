@@ -1,10 +1,12 @@
-export function CustomButton({onClick, text = "Resume"}: {onClick: any, text?: string}) {
+import "../css/CustomButton.css";
+
+export function CustomButton({ onClick, text = "Resume" }: { onClick: any, text?: string }) {
     const handleClick = () => {
         onClick();
     }
 
     return (
-        <a href='#' onClick={() => handleClick()}>
+        <a className="custom-button-container" href='#' onClick={() => handleClick()}>
             <div className="custom-button">{text}</div>
             <div className="arrow-right"></div>
         </a>

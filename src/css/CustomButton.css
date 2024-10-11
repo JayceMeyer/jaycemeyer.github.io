@@ -1,0 +1,48 @@
+.custom-button-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-button {
+  float: left;
+  height: 3.5rem;
+  background: var(--foreground-color);
+  width: 20vw;
+  max-width: 275px;
+  text-align: center;
+  color: var(--background-color);
+  font-family: "Roboto";
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  line-height: 2.5;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.arrow-right {
+  width: 1.75rem;
+  height: 3.5rem;
+  border-top: 1.75rem solid transparent;
+  border-bottom: 1.75rem solid transparent;
+  border-left: 1.75rem solid var(--foreground-color);
+  float: right;
+}
+
+.custom-button:hover {
+  font-weight: bold;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.custom-button:hover + .arrow-right {
+  border-left: 1.75rem solid var(--accent-color) !important;
+}
+
+.custom-button:hover,
+.arrow-right:hover {
+  cursor: pointer;
+}
