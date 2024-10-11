@@ -16,7 +16,7 @@ export function CurriculumVitaePage() {
                         National Park Service
                     </span>
                 </h6>
-                <p>&nbsp;Senior System & Software Architect - Team Lead</p>
+                <p>&nbsp;Senior System & Software Architect &nbsp; - &nbsp; Team Lead</p>
                 <p><span className="whitespace">​</span></p>
 
                 <h6>
@@ -25,7 +25,7 @@ export function CurriculumVitaePage() {
                         Vertafore, Inc.
                     </span>
                 </h6>
-                <p>&nbsp;Software Engineer II</p>
+                <p>&nbsp;Software Engineer II &nbsp; - &nbsp; Scrum Master</p>
                 <p><span className="whitespace">​</span></p>
 
                 <h6>
