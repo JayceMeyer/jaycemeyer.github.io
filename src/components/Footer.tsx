@@ -4,8 +4,6 @@ export function Footer() {
     const date = new Date().getFullYear();
 
     return (
-        <footer>
-            © {date} by Jayce Meyer
-        </footer>
+        <footer>© {date} by Jayce Meyer</footer>
     );
 }

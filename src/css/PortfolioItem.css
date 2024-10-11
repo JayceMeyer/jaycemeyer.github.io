@@ -1,0 +1,10 @@
+.portfolio-item-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5rem;
+  align-items: center;
+}
+
+.portfolio-column {
+  width: 50%;
+}

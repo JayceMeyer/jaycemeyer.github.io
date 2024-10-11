@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import '../css/App.css';
-import { AboutPage } from './AboutPage';
-import { ContactPage } from './ContactPage';
-import { PortfolioPage } from './PortfolioPage';
+import { AboutPage } from './Page-About';
+import { ContactPage } from './Page-Contact';
+import { PortfolioPage } from './Page-Portfolio';
 import { initializeTheme } from "../Helpers";
 import { Header } from "./Header";
 import { Footer } from './Footer';
 import { SideNav } from './SideNav';
-import { aboutPage as about, contactPage as contact, portfolioPage as portfolio } from '../Constants';
-
-export let title = 'jaycemeyer-website';
+import { about, cv, contact, portfolio } from '../Constants';
+import { CurriculumVitaePage } from './Page-CurriculumVitae';
 
 export default function App() {
   const [shownContent, setShownContent] = useState(about);
@@ -29,6 +28,7 @@ export default function App() {
         <div className="main-content" id="main-content">
           {shownContent === about && <AboutPage></AboutPage>}
           {shownContent === portfolio && <PortfolioPage></PortfolioPage>}
+          {shownContent === cv && <CurriculumVitaePage></CurriculumVitaePage>}
           {shownContent === contact && <ContactPage></ContactPage>}
         </div>
       </main>

@@ -1,3 +1,4 @@
-export const aboutPage = "About";
-export const portfolioPage = "Portfolio";
-export const contactPage = "Contact";
+export const about = "About";
+export const portfolio = "Portfolio";
+export const cv = "C. V.";
+export const contact = "Contact";

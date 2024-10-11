@@ -1,0 +1,50 @@
+.lg-bubble-button {
+  display: flex;
+  justify-content: center;
+  color: var(--background-color);
+  background-color: var(--background-color);
+  margin: 0.75rem;
+  font-size: 3rem;
+  border: var(--foreground-color) 0.3rem solid;
+  border-radius: 50%;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s ease-out;
+  max-height: 100px;
+  max-width: 100px;
+  min-height: 50px;
+  min-width: 50px;
+}
+.lg-bubble-button:hover {
+  transform: translateY(-0.15rem);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 15px var(--foreground-color);
+  border-style: double;
+  border: var(--accent-color) 0.3rem double;
+  text-decoration: none;
+}
+
+.sm-bubble-button {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 0.75em;
+  background-color: var(--dark-mode-only-color);
+  transition: 0.25s ease-out;
+}
+.sm-bubble-button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-0.15rem);
+  box-shadow: 0px 0px 10px var(--foreground-color);
+}
+
+.lg-bubble-img {
+  height: 100%;
+  width: 10rem;
+  object-fit: cover;
+  border-radius: 50%;
+}

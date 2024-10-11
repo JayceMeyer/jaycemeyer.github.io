@@ -1,13 +1,14 @@
-.custom-button-container {
+.arrow-button-container {
   display: flex;
   flex-direction: row;
   position: relative;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  margin: 0.5rem;
 }
 
-.custom-button {
+.arrow-button {
   float: left;
   height: 3.5rem;
   background: var(--foreground-color);
@@ -18,9 +19,14 @@
   font-family: "Roboto";
   text-transform: uppercase;
   font-size: 1.6rem;
-  line-height: 2.5;
+  line-height: 2.25;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
+}
+.arrow-button:hover {
+  font-weight: bold;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .arrow-right {
@@ -31,18 +37,11 @@
   border-left: 1.75rem solid var(--foreground-color);
   float: right;
 }
-
-.custom-button:hover {
-  font-weight: bold;
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
-.custom-button:hover + .arrow-right {
-  border-left: 1.75rem solid var(--accent-color) !important;
-}
-
-.custom-button:hover,
+.arrow-button:hover,
 .arrow-right:hover {
   cursor: pointer;
+}
+
+.arrow-button:hover + .arrow-right {
+  border-left: 1.75rem solid var(--accent-color) !important;
 }
