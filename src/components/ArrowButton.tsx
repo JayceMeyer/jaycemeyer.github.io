@@ -3,7 +3,7 @@ import "../css/ArrowButton.css";
 export function ArrowButton(
     {
         onClick,
-        text = "Resume"
+        text = "Résumé"
     }: {
         onClick: any,
         text?: string
