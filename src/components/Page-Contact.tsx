@@ -1,7 +1,7 @@
-import linkedinImg from "../../public/assets/linkedin.png";
-import facebookImg from "../../public/assets/facebook.png";
-import instagramImg from "../../public/assets/instagram.png";
-import githubImg from "../../public/assets/github.png";
+import linkedinImg from "/assets/linkedin.png";
+import facebookImg from "/assets/facebook.png";
+import instagramImg from "/assets/instagram.png";
+import githubImg from "/assets/github.png";
 import "../css/Page.css";
 import { BubbleButton } from "./BubbleButton";
 

@@ -1,4 +1,4 @@
-import headImg from "../../public/assets/head-shot.jpg";
+import headImg from "/assets/head-shot.jpg";
 import { openResume, toggleTheme } from "../Helpers";
 import '../css/Header.css';
 import { ArrowButton } from "./ArrowButton";

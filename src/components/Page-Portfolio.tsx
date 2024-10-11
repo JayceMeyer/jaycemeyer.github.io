@@ -1,7 +1,7 @@
-import trailMapImg from "../../public/assets/Trail_Map.png";
-import candyGalleryImg from "../../public/assets/Candy_Gallery.png";
-import duelCalcImg from "../../public/assets/Duel_Calculator.png";
-import jokeImg from "../../public/assets/Joke_Generator.png";
+import trailMapImg from "/assets/Trail_Map.png";
+import candyGalleryImg from "/assets/Candy_Gallery.png";
+import duelCalcImg from "/assets/Duel_Calculator.png";
+import jokeImg from "/assets/Joke_Generator.png";
 import "../css/Page.css";
 import { PortfolioItem } from "./PortfolioItem";
 
