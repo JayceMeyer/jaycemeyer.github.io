@@ -16,11 +16,13 @@
 }
 .card:hover .arrow-left {
   border-right: 1.8rem solid var(--accent-color) !important;
+  transform: translateY(-0.2rem);
 }
 .card:hover .card-img {
-  box-shadow: var(--accent-color) 5px 0px 15px;
+  box-shadow: var(--accent-color) 1px 0px 15px 5px;
   background-color: var(--accent-color);
   border-color: var(--accent-color);
+  transform: translateY(-0.2rem);
 }
 
 .arrow-left {
@@ -30,15 +32,17 @@
   border-bottom: 1.8rem solid transparent;
   border-right: 1.8rem solid var(--foreground-color);
   float: left;
+  transition: 0.25s ease-out;
 }
 
 .card-img {
   float: right;
-  box-shadow: var(--foreground-color) 5px 0px 10px;
+  box-shadow: var(--foreground-color) 1px 0px 10px 3px;
   height: 15vw;
+  transition: 0.25s ease-out;
 }
 .card-img:hover {
-  box-shadow: var(--accent-color) 5px 0px 15px;
+  box-shadow: var(--accent-color) 1px 0px 15px 5px;
   background-color: var(--accent-color);
   border-color: var(--accent-color);
 }

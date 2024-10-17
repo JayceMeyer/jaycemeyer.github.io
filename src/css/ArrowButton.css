@@ -7,6 +7,17 @@
   align-items: center;
   margin: 0.5rem;
 }
+.arrow-button-container:hover .arrow-right {
+  border-left: 1.75rem solid var(--accent-color) !important;
+  transform: translateY(-0.15rem);
+}
+.arrow-button-container:hover .arrow-button {
+  font-weight: bold;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 3px 0px 15px var(--foreground-color);
+  transform: translateY(-0.15rem);
+}
 
 .arrow-button {
   float: left;
@@ -22,6 +33,7 @@
   line-height: 2.25;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
+  transition: 0.25s ease-out;
 }
 .arrow-button:hover {
   font-weight: bold;
@@ -36,12 +48,5 @@
   border-bottom: 1.75rem solid transparent;
   border-left: 1.75rem solid var(--foreground-color);
   float: right;
-}
-.arrow-button:hover,
-.arrow-right:hover {
-  cursor: pointer;
-}
-
-.arrow-button:hover + .arrow-right {
-  border-left: 1.75rem solid var(--accent-color) !important;
+  transition: 0.25s ease-out;
 }

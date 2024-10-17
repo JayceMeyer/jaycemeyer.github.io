@@ -15,7 +15,8 @@ export function ArrowCard(
 ) {
     return (
         <div className="card-container">
-            <a className="card" href={href} target="_blank" title={title}><div className="arrow-left"></div>
+            <a className="card" href={href} target="_blank" title={title}>
+                <div className="arrow-left"></div>
                 <img className="card-img" src={imgSrc} alt={altText}></img>
             </a>
         </div>
