@@ -1,3 +1,4 @@
+import sRattsImg from "/assets/SRatts_Fine_Art.png";
 import trailMapImg from "/assets/Trail_Map.png";
 import candyGalleryImg from "/assets/Candy_Gallery.png";
 import duelCalcImg from "/assets/Duel_Calculator.png";
@@ -36,6 +37,13 @@ export function PortfolioPage() {
                         Github
                     </a>. (This website was written with React in 2024).</p>
             </div>
+
+            <PortfolioItem
+                title="S. Ratts Fine Art (2025)"
+                text="A custom designed webpage showcasing artwork by Shannon Ratts. (Written in React.js)"
+                cardHref="https://srattsfineart.github.io/"
+                cardImgSrc={sRattsImg}
+                cardAltText="s ratts fine art image" />
 
             <PortfolioItem
                 title="The Trail Map (2024)"
