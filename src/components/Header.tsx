@@ -13,7 +13,7 @@ export function Header() {
     return (
         <header className="header-main">
             <div className="header-content">
-                <BubbleButton onClick={() => handleClick("theme")} altText="Jayce Picture Logo" imgSrc={headImg} title="Toggle Theme" />
+                <BubbleButton onClick={() => handleClick("theme")} altText="Jayce Picture Logo" imgSrc={headImg} title="Toggle Theme" animated={true} />
                 <h1 className="header-bar-title">Jayce Meyer</h1>
             </div>
 

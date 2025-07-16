@@ -1,3 +1,24 @@
+/* Define the pulsing animation */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(var(--accent-color-rgb), 0.7);
+    border-color: var(--foreground-color);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(var(--accent-color-rgb), 0);
+    border-color: var(--accent-color);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--accent-color-rgb), 0);
+    border-color: var(--foreground-color);
+  }
+}
+
+/* Animation class that can be applied to any button */
+.animated-button {
+  animation: pulse-border 1.5s 3; /* 1.5s duration, repeat twice (3 seconds total) */
+}
+
 .lg-bubble-button {
   display: flex;
   justify-content: center;

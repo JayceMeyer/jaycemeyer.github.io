@@ -8,7 +8,8 @@ export function BubbleButton(
         imgSrc,
         title,
         size = "lg",
-        imgHeight
+        imgHeight,
+        animated = false
     }: {
         onClick?: any,
         href?: string,
@@ -16,17 +17,35 @@ export function BubbleButton(
         imgSrc?: string,
         title?: string,
         size?: "sm" | "lg",
-        imgHeight?: string
+        imgHeight?: string,
+        animated?: boolean
     }
 ) {
-    const handleClick = () => {
-        if (onClick !== undefined && onClick !== null) onClick();
-        else if (href?.length) window.open(href, "_blank", "noopener");
+    const handleClick = (e: React.MouseEvent) => {
+        e.preventDefault(); // Prevent default behavior
+        
+        if (onClick !== undefined && onClick !== null) {
+            onClick();
+        } else if (href?.length) {
+            window.open(href, "_blank", "noopener");
+        }
     }
 
     return (
-        <a className={size === "lg" ? "lg-bubble-button" : "sm-bubble-button"} title={title} onClick={() => handleClick()}>
-            <img className={size === "lg" ? "lg-bubble-img" : ""} style={imgHeight?.length ? { height: imgHeight } : {}} src={imgSrc} alt={altText}></img>
+        <a 
+            className={`${size === "lg" ? "lg-bubble-button" : "sm-bubble-button"} ${animated ? "animated-button" : ""}`}
+            title={title} 
+            onClick={handleClick}
+            href={href || "#"} // Add href attribute for better accessibility
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img 
+                className={size === "lg" ? "lg-bubble-img" : ""} 
+                style={imgHeight?.length ? { height: imgHeight } : {}} 
+                src={imgSrc} 
+                alt={altText}
+            />
         </a>
     );
 }

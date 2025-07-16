@@ -5,6 +5,7 @@
   --lightgray: #bdbdbd;
   --white: #f9f9f9;
   --orange: rgb(210, 60, 15);
+  --accent-color-rgb: 210, 60, 15; /* RGB values for animation effects */
   --foreground-color: var(--charcoal);
   --background-color: var(--white);
   --accent-color: var(--orange);
