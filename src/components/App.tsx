@@ -56,7 +56,12 @@ export default function App() {
   
   // Function to get initial section from URL
   const getSectionFromURL = (): string => {
-    const path = window.location.pathname;
+    // Check if we have an initialPath from a redirect
+    // @ts-ignore - initialPath is added to window in index.html
+    const redirectPath = window.initialPath || window.location.pathname;
+    
+    // Parse the path
+    const path = redirectPath;
     if (path === '/' || path === '') {
       return about;
     } else if (path === '/portfolio') {
@@ -110,6 +115,10 @@ export default function App() {
   useEffect(() => {
     const initialSection = getSectionFromURL();
     setActiveSection(initialSection);
+    lastProcessedSection = initialSection; // Set last processed section to prevent bouncing
+    
+    // Update URL to match the section (in case we came from a redirect)
+    updateURL(initialSection);
     
     // Scroll to the appropriate section based on URL
     let targetRef;
@@ -131,10 +140,20 @@ export default function App() {
     }
     
     if (targetRef && targetRef.current) {
+      // Create a navigation lock to prevent IntersectionObserver from interfering
+      createNavigationLock(1000);
+      
       // Use a small timeout to ensure the DOM is ready
       setTimeout(() => {
         targetRef.current?.scrollIntoView({ behavior: 'auto' });
       }, 100);
+    }
+    
+    // Clear the initialPath from window after we've used it
+    // @ts-ignore - initialPath is added to window in index.html
+    if (window.initialPath) {
+      // @ts-ignore
+      delete window.initialPath;
     }
     
     // Handle browser back/forward buttons
