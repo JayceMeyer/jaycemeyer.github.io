@@ -8,6 +8,32 @@
   padding-right: 0.75em;
   margin-right: 1rem;
   width: 25%;
+  position: relative;
+}
+
+/* Add a subtle divider for better visual separation on all devices */
+.side-nav-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--foreground-color), transparent);
+  opacity: 0.3;
+}
+
+/* Mobile-specific styling for side navigation */
+@media only screen and (max-width: 768px) {
+  .side-nav-wrapper {
+    width: 24%; /* Reduce width on mobile */
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    margin-right: 0.5rem;
+  }
+  
+  .side-nav-wrapper::after {
+    opacity: 0.5; /* Make divider more visible on mobile */
+  }
 }
 
 .side-nav-item,
@@ -22,6 +48,19 @@
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile-specific text styling */
+@media only screen and (max-width: 768px) {
+  .side-nav-item,
+  .selected-side-nav-item {
+    font-size: 14px;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    letter-spacing: 0;
+  }
 }
 
 .selected-side-nav-item {
