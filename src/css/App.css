@@ -24,10 +24,36 @@
 .main-content {
   width: 75%;
   overflow-y: auto;
+  scrollbar-color: var(--foreground-color) var(--background-color);
+  scrollbar-arrow-color: transparent;
   scroll-behavior: smooth;
   scroll-snap-type: y proximity; /* Changed from mandatory for better experience with long content */
   padding-right: 15px; /* Add padding to account for scrollbar width */
   overscroll-behavior-y: contain; /* Prevent bounce effect at the end of scrolling */
+}
+
+/* Hide scrollbar arrows in Firefox */
+.main-content {
+  scrollbar-width: thin;
+}
+
+/* Hide scrollbar arrows in Webkit/Chrome */
+.main-content::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Customize scrollbar in Webkit/Chrome */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: var(--foreground-color);
+  border-radius: 4px;
 }
 
 .section {
