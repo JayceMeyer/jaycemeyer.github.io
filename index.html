@@ -7,7 +7,27 @@
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin%20Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <script type="module" crossorigin src="/assets/index-BV2vYQng.js"></script>
+    <script type="text/javascript">
+      // Handle SPA routing for GitHub Pages
+      (function() {
+        // Check if we have a redirect path stored from 404.html
+        var redirectPath = sessionStorage.getItem('redirect_path');
+        if (redirectPath) {
+          // Clear the redirect path from sessionStorage
+          sessionStorage.removeItem('redirect_path');
+          
+          // Store the path to use after the app loads
+          window.initialPath = redirectPath;
+          
+          // If we're not at the root, update the URL to match the path
+          // This helps with browser history and bookmarking
+          if (redirectPath !== '/' && window.location.pathname === '/') {
+            history.replaceState(null, null, redirectPath);
+          }
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-CPrnO8X9.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-bR4hDSHN.css">
   </head>
   <body>

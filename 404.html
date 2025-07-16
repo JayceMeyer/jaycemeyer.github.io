@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jayce Meyer - Redirecting</title>
+  <script type="text/javascript">
+    // GitHub Pages SPA redirect
+    // This script handles direct navigation to routes like /portfolio, /cv, etc.
+    (function() {
+      // Parse the current URL path
+      var segmentCount = 0;
+      var location = window.location;
+      
+      // GitHub Pages serves 404.html for all routes not ending with .html
+      // We need to redirect to the index.html and pass the path
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      
+      // If we have a redirect path, store it
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      } else {
+        // Otherwise, store the current path
+        var path = location.pathname;
+        // Remove any trailing slash
+        path = path.replace(/\/$/, '');
+        // Store the path for index.html to use
+        sessionStorage.setItem('redirect_path', path);
+        // Redirect to the root
+        window.location.replace('/');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <h1>Page Not Found</h1>
+  <p>Redirecting to homepage...</p>
+</body>
+</html>
