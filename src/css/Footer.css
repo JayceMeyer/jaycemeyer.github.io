@@ -1,10 +1,11 @@
 footer {
-  margin-top: 10rem;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   font-family: "Roboto";
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1.1;
+  color: var(--unselected-item-color);
 }

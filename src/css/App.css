@@ -1,28 +1,48 @@
 #app {
   width: 100%;
   height: 100%;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .main-wrapper {
   width: 100%;
+  flex: 1;
   display: flex;
   justify-content: space-evenly;
   color: var(--foreground-color);
   background-color: var(--background-color);
+  overflow: hidden;
 }
 
 .main-content {
   width: 75%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity; /* Changed from mandatory for better experience with long content */
+  padding-right: 15px; /* Add padding to account for scrollbar width */
+  overscroll-behavior-y: contain; /* Prevent bounce effect at the end of scrolling */
 }
 
-.show {
-  transform: translateY(0%);
+.section {
+  min-height: 100vh;
   opacity: 1;
-  transition: 0.4s ease-in-out;
+  scroll-snap-align: start;
+  padding: 20px 0;
+  transition: opacity 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
-.hide {
-  opacity: 0;
-  transform: translateY(-100%);
+
+/* Ensure the last section has enough height to fill the viewport */
+section#Contact {
+  min-height: 100%; /* Default for desktop */
 }
 
 /* @media only screen and (max-width: 600px) {

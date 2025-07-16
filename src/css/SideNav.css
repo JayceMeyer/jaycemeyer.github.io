@@ -32,6 +32,16 @@
   color: var(--accent-color);
 }
 
+@media (hover: none) {
+  .side-nav-item:hover {
+    color: var(--unselected-item-color);
+  }
+  
+  .side-nav-item:active {
+    color: var(--accent-color);
+  }
+}
+
 .side-nav-item:before {
   content: "";
   position: absolute;
@@ -51,4 +61,18 @@
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+@media (hover: none) {
+  .side-nav-item:hover:before {
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+  
+  .side-nav-item:active:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
 }

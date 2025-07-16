@@ -20,7 +20,7 @@ export function BubbleButton(
     }
 ) {
     const handleClick = () => {
-        if (onClick) onClick();
+        if (onClick !== undefined && onClick !== null) onClick();
         else if (href?.length) window.open(href, "_blank", "noopener");
     }
 
