@@ -7,9 +7,15 @@ export function AboutPage() {
             <div id="about-text" className="page-content">
                 <h4>About Me</h4>
                 
-                <div className="location-badge">
-                    <span className="location-icon">📍</span>
-                    <span>Based in Lakewood, CO</span>
+                <div className="info-badges">
+                    <div className="location-badge">
+                        <span className="location-icon">📍</span>
+                        <span>Based in Lakewood, CO</span>
+                    </div>
+                    <div className="availability-status">
+                        <div className="status-indicator available"></div>
+                        <span>Currently open to new opportunities</span>
+                    </div>
                 </div>
 
                 <div className="about-section">
