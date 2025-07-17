@@ -1,0 +1,341 @@
+/* Contact Page Specific Styles */
+
+.contact-intro {
+  margin: 2rem 0 3rem 0;
+}
+
+.intro-card {
+  background: linear-gradient(135deg, rgba(var(--accent-color-rgb), 0.1) 0%, rgba(var(--accent-color-rgb), 0.05) 100%);
+  padding: 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(var(--accent-color-rgb), 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.05) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.intro-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-card h5 {
+  color: var(--accent-color);
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-card p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--foreground-color);
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-methods {
+  margin: 3rem 0;
+}
+
+.contact-section {
+  margin: 2.5rem 0;
+}
+
+.contact-section h5 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--foreground-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.contact-section h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), rgba(var(--accent-color-rgb), 0.3));
+}
+
+/* Email Section */
+.email-card {
+  background: rgba(var(--foreground-color), 0.02);
+  border: 1px solid rgba(var(--foreground-color), 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.email-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--foreground-color), 0.1);
+  border-color: rgba(var(--accent-color-rgb), 0.2);
+}
+
+.email-card p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--foreground-color);
+  opacity: 0.8;
+}
+
+.email-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(45deg, var(--accent-color), rgba(var(--accent-color-rgb), 0.8));
+  color: var(--background-color);
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(var(--accent-color-rgb), 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.email-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.email-link:hover::before {
+  left: 100%;
+}
+
+.email-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--accent-color-rgb), 0.4);
+}
+
+.email-icon {
+  font-size: 1.5rem;
+}
+
+.email-address {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+}
+
+.email-arrow {
+  font-size: 1.6rem;
+  transition: transform 0.3s ease;
+}
+
+.email-link:hover .email-arrow {
+  transform: translateX(5px);
+}
+
+/* Social Grid */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.social-item {
+  background: rgba(var(--foreground-color), 0.02);
+  border: 1px solid rgba(var(--foreground-color), 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  gap: 1rem;
+}
+
+.social-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--foreground-color), 0.1);
+  border-color: rgba(var(--accent-color-rgb), 0.2);
+}
+
+.social-info {
+  flex: 1;
+}
+
+.social-info h6 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 0 0 0.5rem 0;
+}
+
+.social-info p {
+  font-size: 1.2rem;
+  color: var(--foreground-color);
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Contact Footer */
+.contact-footer {
+  margin: 3rem 0 2rem 0;
+}
+
+.footer-card {
+  background: rgba(var(--foreground-color), 0.02);
+  border: 1px solid rgba(var(--foreground-color), 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-card h6 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 0 0 1rem 0;
+}
+
+.footer-card p {
+  font-size: 1.3rem;
+  color: var(--foreground-color);
+  opacity: 0.8;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.availability-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(var(--accent-color-rgb), 0.1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.status-indicator.available {
+  background: #4CAF50;
+  box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .intro-card {
+    padding: 2rem;
+  }
+  
+  .intro-icon {
+    font-size: 2.5rem;
+  }
+  
+  .intro-card h5 {
+    font-size: 1.8rem;
+  }
+  
+  .intro-card p {
+    font-size: 1.3rem;
+  }
+  
+  .social-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .social-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .email-card {
+    padding: 1.5rem;
+  }
+  
+  .footer-card {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .intro-card {
+    padding: 1.5rem;
+  }
+  
+  .email-link {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .contact-section h5 {
+    font-size: 1.7rem;
+  }
+  
+  .social-info h6 {
+    font-size: 1.4rem;
+  }
+  
+  .social-info p {
+    font-size: 1.1rem;
+  }
+  
+  .availability-status {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-right: 3%;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .page-content {
@@ -11,6 +12,7 @@
   padding-bottom: 2rem;
   margin-bottom: 2rem;
   width: 97%;
+  position: relative;
 }
 
 .line-wrapper {
@@ -18,18 +20,66 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* Enhanced Typography */
+.page-wrapper h4 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--foreground-color);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.page-wrapper h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-color), rgba(var(--accent-color-rgb), 0.3));
+  border-radius: 2px;
 }
 
 .page-wrapper h5 {
   text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 2rem 0 1rem 0;
+  color: var(--accent-color);
+  letter-spacing: 0.5px;
 }
 
+.page-wrapper h6 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 1.5rem 0 0.5rem 0;
+  color: var(--foreground-color);
+}
+
+.page-wrapper p {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: var(--foreground-color);
+  opacity: 0.9;
+}
+
+/* Enhanced Links */
 .page-wrapper p a {
   color: var(--accent-color);
   font-family: "Josefin Sans";
   position: relative;
-  padding: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
+
 .page-wrapper p a:before {
   content: "";
   position: absolute;
@@ -37,15 +87,82 @@
   height: 0.2rem;
   bottom: 0;
   left: 0;
-  background-color: var(--foreground-color);
+  background-color: var(--accent-color);
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
 }
+
+.page-wrapper p a:hover {
+  background-color: rgba(var(--accent-color-rgb), 0.1);
+  transform: translateY(-1px);
+}
+
 .page-wrapper p a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Content sections with staggered animations */
+.page-content > *:nth-child(1) { animation: slideInLeft 0.6s ease-out 0.1s both; }
+.page-content > *:nth-child(2) { animation: slideInLeft 0.6s ease-out 0.2s both; }
+.page-content > *:nth-child(3) { animation: slideInLeft 0.6s ease-out 0.3s both; }
+.page-content > *:nth-child(4) { animation: slideInLeft 0.6s ease-out 0.4s both; }
+.page-content > *:nth-child(5) { animation: slideInLeft 0.6s ease-out 0.5s both; }
+.page-content > *:nth-child(6) { animation: slideInLeft 0.6s ease-out 0.6s both; }
+.page-content > *:nth-child(7) { animation: slideInLeft 0.6s ease-out 0.7s both; }
+.page-content > *:nth-child(8) { animation: slideInLeft 0.6s ease-out 0.8s both; }
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .page-wrapper {
+    margin-right: 1%;
+  }
+  
+  .page-content {
+    padding-right: 1rem;
+    width: 95%;
+  }
+  
+  .page-wrapper h4 {
+    font-size: 2.4rem;
+  }
+  
+  .page-wrapper h5 {
+    font-size: 1.6rem;
+  }
+  
+  .page-wrapper h6 {
+    font-size: 1.4rem;
+  }
+  
+  .page-wrapper p {
+    font-size: 1.3rem;
+  }
 }
