@@ -2,112 +2,201 @@
   display: flex;
   flex-direction: column;
   align-self: flex-start;
-  align-items: center;
+  align-items: stretch;
   order: -1;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-  margin-right: 1rem;
+  padding: 2rem 1rem;
+  margin-right: 1.5rem;
   width: 25%;
   position: relative;
+  min-height: 100vh;
+  background: rgba(var(--foreground-color), 0.02);
+  border-right: 1px solid rgba(var(--foreground-color), 0.1);
+  backdrop-filter: blur(10px);
 }
 
-/* Add a subtle divider for better visual separation on all devices */
+/* Add a subtle gradient overlay */
+.side-nav-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(var(--accent-color-rgb), 0.05), transparent);
+  pointer-events: none;
+}
+
+/* Enhanced divider with gradient effect */
 .side-nav-wrapper::after {
   content: "";
   position: absolute;
   right: 0;
-  height: 100%;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--foreground-color), transparent);
-  opacity: 0.3;
+  top: 10%;
+  height: 80%;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(var(--accent-color-rgb), 0.3) 20%,
+    var(--accent-color) 50%,
+    rgba(var(--accent-color-rgb), 0.3) 80%,
+    transparent 100%
+  );
+  border-radius: 1px;
 }
 
 /* Mobile-specific styling for side navigation */
 @media only screen and (max-width: 768px) {
   .side-nav-wrapper {
-    width: 24%; /* Reduce width on mobile */
-    padding-left: 0.25em;
-    padding-right: 0.25em;
-    margin-right: 0.5rem;
+    width: 20%;
+    padding: 1.5rem 0.5rem;
+    margin-right: 1rem;
+    background: rgba(var(--foreground-color), 0.03);
+  }
+  
+  .side-nav-wrapper::after {
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(var(--accent-color-rgb), 0.2) 30%,
+      rgba(var(--accent-color-rgb), 0.4) 50%,
+      rgba(var(--accent-color-rgb), 0.2) 70%,
+      transparent 100%
+    );
   }
 }
 
 .side-nav-item,
 .selected-side-nav-item {
-  padding: 0.5rem;
-  margin-bottom: 0.75rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   text-decoration: none;
-  font-family: "Roboto";
-  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
   color: var(--unselected-item-color);
   position: relative;
-  text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Add a subtle shine effect */
+.side-nav-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(var(--accent-color-rgb), 0.1), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.side-nav-item:hover::before {
+  left: 100%;
 }
 
 /* Mobile-specific text styling */
 @media only screen and (max-width: 768px) {
   .side-nav-item,
   .selected-side-nav-item {
-    font-size: 14px;
-    padding: 0.4rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-    letter-spacing: 0;
+    font-size: 1.1rem;
+    padding: 0.8rem 0.5rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
   }
 }
 
 .selected-side-nav-item {
-  color: var(--foreground-color);
+  color: var(--background-color);
+  background: linear-gradient(135deg, var(--accent-color), rgba(var(--accent-color-rgb), 0.8));
+  border: 1px solid var(--accent-color);
+  box-shadow: 0 4px 15px rgba(var(--accent-color-rgb), 0.3);
+  transform: translateY(-1px);
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+.selected-side-nav-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 8px;
+  pointer-events: none;
 }
 
 .side-nav-item:hover {
   color: var(--accent-color);
+  background: rgba(var(--accent-color-rgb), 0.1);
+  border: 1px solid rgba(var(--accent-color-rgb), 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--foreground-color), 0.1);
 }
 
+/* Enhanced underline effect */
+.side-nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: var(--accent-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.side-nav-item:hover::after {
+  width: 80%;
+}
+
+.selected-side-nav-item::after {
+  width: 0; /* Remove underline for selected items since they have background */
+}
+
+/* Touch device specific styles */
 @media (hover: none) {
   .side-nav-item:hover {
     color: var(--unselected-item-color);
+    background: transparent;
+    border: 1px solid transparent;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .side-nav-item:hover::before {
+    left: -100%;
+  }
+  
+  .side-nav-item:hover::after {
+    width: 0;
   }
   
   .side-nav-item:active {
     color: var(--accent-color);
-  }
-}
-
-.side-nav-item:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 0.2rem;
-  bottom: 0;
-  left: 0;
-  background-color: var(--foreground-color);
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.side-nav-item:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-}
-
-@media (hover: none) {
-  .side-nav-item:hover:before {
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
+    background: rgba(var(--accent-color-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-color-rgb), 0.3);
   }
   
-  .side-nav-item:active:before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+  .side-nav-item:active::after {
+    width: 80%;
   }
 }

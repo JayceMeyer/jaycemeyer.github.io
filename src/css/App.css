@@ -29,6 +29,7 @@
   scroll-behavior: smooth;
   scroll-snap-type: y proximity; /* Changed from mandatory for better experience with long content */
   padding-right: 15px; /* Add padding to account for scrollbar width */
+  padding-left: 10px; /* Add left padding for better separation from sidebar */
   overscroll-behavior-y: contain; /* Prevent bounce effect at the end of scrolling */
 }
 
@@ -36,7 +37,7 @@
 @media only screen and (max-width: 768px) {
   .main-content {
     width: 80%; /* Increase width on mobile to match reduced side nav */
-    padding-left: 10px; /* Add left padding for better separation */
+    padding-left: 15px; /* Increase left padding for better separation */
   }
 }
 
