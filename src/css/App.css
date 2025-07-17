@@ -24,7 +24,7 @@
 .main-content {
   width: 75%;
   overflow-y: auto;
-  scrollbar-color: var(--foreground-color) var(--background-color);
+  scrollbar-color: var(--accent-color) var(--background-color);
   scrollbar-arrow-color: transparent;
   scroll-behavior: smooth;
   scroll-snap-type: y proximity; /* Changed from mandatory for better experience with long content */

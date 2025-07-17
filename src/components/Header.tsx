@@ -1,7 +1,6 @@
 import headImg from "/assets/head-shot.jpg";
 import { openResume, toggleTheme } from "../Helpers";
 import '../css/Header.css';
-import { ArrowButton } from "./ArrowButton";
 import { BubbleButton } from "./BubbleButton";
 
 export function Header() {
@@ -13,12 +12,20 @@ export function Header() {
     return (
         <header className="header-main">
             <div className="header-content">
-                <BubbleButton onClick={() => handleClick("theme")} altText="Jayce Picture Logo" imgSrc={headImg} title="Toggle Theme" animated={true} />
-                <h1 className="header-bar-title">Jayce Meyer</h1>
+                <BubbleButton 
+                    onClick={() => handleClick("theme")} 
+                    altText="Jayce Picture Logo" 
+                    imgSrc={headImg} 
+                    title="Toggle Theme" 
+                    animated={true} 
+                />
+                <h1 className="header-name">Jayce Meyer</h1>
             </div>
 
             <div className="header-content">
-                <ArrowButton onClick={() => handleClick("resume")}></ArrowButton>
+                <button className="resume-button" onClick={() => handleClick("resume")}>
+                    View Resume
+                </button>
             </div>
         </header>
     );
