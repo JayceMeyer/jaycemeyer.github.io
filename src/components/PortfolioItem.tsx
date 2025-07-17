@@ -1,5 +1,4 @@
 import "../css/PortfolioItem.css";
-import { ArrowCard } from "./ArrowCard";
 
 export function PortfolioItem({
     title,
@@ -15,22 +14,25 @@ export function PortfolioItem({
     cardAltText: string
 }) {
     return (
-        <div className="portfolio-item-wrapper">
-            <div className="portfolio-column">
-                <p><span className="whitespace">​</span></p>
-                <h5>{title}:</h5>
-                <p><span className="whitespace">​</span></p>
-                <p>{text}</p>
-                <p><span className="whitespace">​</span></p>
+        <div className="portfolio-item">
+            <div className="portfolio-content">
+                <h5 className="portfolio-title">{title}</h5>
+                <p className="portfolio-description">{text}</p>
+                <a href={cardHref} target="_blank" rel="noopener noreferrer" className="portfolio-link">
+                    <span className="link-text">View Project</span>
+                    <span className="link-arrow">→</span>
+                </a>
             </div>
-
-            <div className="portfolio-column">
-                <ArrowCard
-                    title={title}
-                    href={cardHref}
-                    imgSrc={cardImgSrc}
-                    altText={cardAltText}>
-                </ArrowCard>
+            <div className="portfolio-image">
+                <a href={cardHref} target="_blank" rel="noopener noreferrer">
+                    <img src={cardImgSrc} alt={cardAltText} />
+                    <div className="image-overlay">
+                        <div className="overlay-content">
+                            <span className="overlay-icon">🔗</span>
+                            <span className="overlay-text">View Project</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     );

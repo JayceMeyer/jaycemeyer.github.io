@@ -13,6 +13,8 @@
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+  cursor: pointer;
+  text-decoration: none;
 }
 .card:hover .arrow-left {
   border-right: 1.8rem solid var(--accent-color) !important;
@@ -35,18 +37,147 @@
   transition: 0.25s ease-out;
 }
 
-.card-img {
+.card-img-wrapper {
+  position: relative;
   float: right;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.card-img {
   box-shadow: var(--foreground-color) 1px 0px 10px 3px;
   height: 15vw;
   transition: 0.25s ease-out;
-}
-.card-img:hover {
-  box-shadow: var(--accent-color) 1px 0px 15px 5px;
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+  display: block;
+  border-radius: 8px;
 }
 
 .card-img img {
   height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.click-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(var(--accent-color-rgb), 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.click-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.click-text {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card:hover .click-overlay {
+  opacity: 1;
+}
+
+.card:hover .card-img {
+  box-shadow: var(--accent-color) 1px 0px 15px 5px;
+  transform: translateY(-0.2rem);
+}
+
+/* Mobile responsive styles */
+@media only screen and (max-width: 768px) {
+  .card-img {
+    height: 20vw;
+  }
+  
+  .card-img img {
+    height: 15rem;
+  }
+  
+  .click-text {
+    font-size: 1rem;
+  }
+  
+  .click-icon {
+    font-size: 1.5rem;
+  }
+  
+  /* Hide overlay on mobile - only show on desktop hover */
+  .click-overlay {
+    opacity: 0;
+    display: none;
+  }
+  
+  /* Add mobile-specific styling */
+  .card {
+    position: relative;
+  }
+  
+  .card::after {
+    content: "Tap to Open";
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 10;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card-img {
+    height: 25vw;
+  }
+  
+  .card-img img {
+    height: 12rem;
+  }
+  
+  .click-text {
+    font-size: 0.9rem;
+  }
+  
+  .arrow-left {
+    border-top: 1.5rem solid transparent;
+    border-bottom: 1.5rem solid transparent;
+    border-right: 1.5rem solid var(--accent-color);
+  }
+  
+  /* Hide overlay on small mobile too */
+  .click-overlay {
+    opacity: 0;
+    display: none;
+  }
+  
+  .card::after {
+    bottom: -1.5rem;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  /* Improve touch targets */
+  .card {
+    min-height: 3rem;
+    padding: 0.5rem;
+  }
 }

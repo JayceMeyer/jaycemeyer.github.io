@@ -75,7 +75,7 @@ export function PortfolioPage() {
 
                     <PortfolioItem
                         title="The Trail Map (2024)"
-                        text="A tool for plotting Trails, Points of Interest, Alerts, and Elevation using maplibre-gl and GeoJson. (Written in React.js)"
+                        text="A demo version of the NPS mapping tool for plotting Trails, Points of Interest, Alerts, and Elevation using maplibre-gl and GeoJson. (Written in React.js)"
                         cardHref="https://jaycemeyer.github.io/Trail-Map/"
                         cardImgSrc={trailMapImg}
                         cardAltText="trail map image" />
@@ -89,17 +89,17 @@ export function PortfolioPage() {
 
                     <PortfolioItem
                         title="The Yu-Gi-Oh! Duel Calculator (2019)"
-                        text="A fun way to battle your friends (and your enemies) with your most powerful playing card deck. (Written in React.js)"
+                        text="My first ever React app. A fun way to battle your friends (and your enemies) with your most powerful playing card deck. (Written in React.js)"
                         cardHref="https://jaycemeyer.github.io/React-Duel-Calculator/"
                         cardImgSrc={duelCalcImg}
                         cardAltText="duel calculator image" />
 
-                    <PortfolioItem
+                    {/* <PortfolioItem
                         title="The Joke & Excuse Generator (2018)"
                         text="When you just need a little pick me up, this little app will lift your spirits. Need to work from home, but just don't know the best way to break it to the team? Enter the Joke & Excuse Generator. (Written in C# - Windows Forms)"
                         cardHref="https://github.com/JayceMeyer/Joke-Excuse-Generator-EXE/"
                         cardImgSrc={jokeImg}
-                        cardAltText="joke generator image" />
+                        cardAltText="joke generator image" /> */}
                 </div>
             </div>
         </div>
