@@ -19,7 +19,12 @@ export function Header() {
                     title="Toggle Theme" 
                     animated={true} 
                 />
-                <h1 className="header-name">Jayce Meyer</h1>
+                <div className="name-button-section">
+                    <h1 className="header-name">Jayce Meyer</h1>
+                    <button className="resume-button mobile-resume-button" onClick={() => handleClick("resume")}>
+                        View Resume
+                    </button>
+                </div>
             </div>
 
             <div className="header-content">
