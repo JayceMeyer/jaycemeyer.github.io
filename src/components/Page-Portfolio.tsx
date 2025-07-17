@@ -2,7 +2,6 @@ import sRattsImg from "/assets/SRatts_Fine_Art.png";
 import trailMapImg from "/assets/Trail_Map.png";
 import candyGalleryImg from "/assets/Candy_Gallery.png";
 import duelCalcImg from "/assets/Duel_Calculator.png";
-import jokeImg from "/assets/Joke_Generator.png";
 import "../css/Page.css";
 import "../css/Page-Portfolio.css";
 import { PortfolioItem } from "./PortfolioItem";
